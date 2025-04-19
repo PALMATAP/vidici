@@ -1,231 +1,686 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VIDICI Publicidad Médica</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIDICI Marketing Digital - Especialistas en Marketing Médico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root {
+      --primary: #2563eb; /* Azul profesional */
+      --secondary: #1e40af; /* Azul oscuro */
+      --accent: #3b82f6; /* Azul claro */
+      --dark: #1f2937;
+      --light: #f9fafb;
+      --success: #10b981; /* Verde */
     }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
     .hero {
-      background: linear-gradient(135deg, #007bff, #00c6ff);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 60px 20px;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      opacity: 0.15;
+    }
+    
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border: none;
+      padding: 12px 24px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
+    .service-card {
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--primary);
+      height: 100%;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 50px;
       text-align: center;
     }
-    .btn-primary {
-      background-color: #007bff;
-      border: none;
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
     }
-    .section {
-      padding: 60px 20px;
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
     }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .client-logo {
+      height: 60px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
+    
+    .client-logo:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+    
     footer {
-      background-color: #343a40;
+      background-color: var(--dark);
       color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      margin-right: 10px;
+      transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .form-control {
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .stats-item {
+      text-align: center;
       padding: 20px;
     }
-    .nav-link {
-      color: white;
+    
+    .stats-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
     }
-    .form-section input, .form-section textarea {
-      margin-bottom: 10px;
+    
+    .video-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    .restricted-section {
-      display: none;
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 0;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">VIDICI Marketing Médico</a>
+      <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/150x50?text=VIDICI" alt="VIDICI Marketing Digital" height="40">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li class="nav-item"><a class="nav-link" href="#login">Ingresar</a></li>
+          <li class="nav-item ms-lg-3"><a href="#contacto" class="btn btn-primary">Diagnóstico Gratis</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Transformamos tu clínica médica con marketing digital</h1>
-    <p>Gestión de redes sociales, campañas digitales, diseño y más...</p>
-    <a href="#contacto" class="btn btn-light">Solicita tu diagnóstico gratuito</a>
-  </section>
-
-  <section class="section" id="servicios">
-    <div class="container">
-      <h2 class="text-center">Nuestros Servicios</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <h5>📲 Gestión de Redes Sociales</h5>
-          <p>Facebook, Instagram, LinkedIn, TikTok</p>
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold mb-4">Marketing Digital Especializado en el Sector Salud</h1>
+          <p class="lead mb-4">Atrae más pacientes, automatiza tu agenda y posiciona tu consultorio como referente en tu especialidad.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contacto" class="btn btn-light btn-lg">Solicitar Diagnóstico</a>
+            <a href="#servicios" class="btn btn-outline-light btn-lg">Nuestros Servicios</a>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h5>🎯 Campañas Digitales</h5>
-          <p>Google Ads, Meta Ads, creación de campañas, optimización continua</p>
-        </div>
-        <div class="col-md-4">
-          <h5>🤖 Asistente Virtual</h5>
-          <p>Agendamiento, atención básica, canalización</p>
-        </div>
-        <div class="col-md-4">
-          <h5>📆 Agenda Digital</h5>
-          <p>Control de citas profesional para tu clínica</p>
-        </div>
-        <div class="col-md-4">
-          <h5>🎥 Grabación de Personal Médico</h5>
-          <p>Videos en clínica para generar confianza y posicionamiento</p>
-        </div>
-        <div class="col-md-4">
-          <h5>📋 Formatearía Médica</h5>
-          <p>Recetarios, consentimientos, papelería digital y más</p>
+        <div class="col-lg-6 d-none d-lg-block">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Médico usando tablet" class="img-fluid rounded-3 shadow">
         </div>
       </div>
     </div>
   </section>
-  <section class="section bg-light text-center">
-    <h2>📽 Video Destacado</h2>
-    <div class="ratio ratio-16x9">
-      <iframe src="https://www.tiktok.com/embed/v2/7488013965981879557" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
 
-  <section class="section text-center">
-    <h2>📰 Publicación Reciente</h2>
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D1154081183082927%26set%3Da.607268554430862&show_text=true&width=500" width="500" height="680" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
-  <!-- Encabezado -->
-  <header class="masthead" style="background-image: url('assets/img/clinica-digital.jpg')">
-    <div class="container position-relative px-4 px-lg-5">
-      <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7 text-center">
-          <div class="site-heading">
-            <h1>Tu clínica visible, tu agenda llena</h1>
-            <span class="subheading">Marketing digital especializado en clínicas médicas</span>
+  <!-- Estadísticas -->
+  <section class="bg-light">
+    <div class="container py-4">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="stats-number">+80%</div>
+            <div class="stats-label">Pacientes buscan en internet</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="stats-number">3x</div>
+            <div class="stats-label">Más consultas con marketing</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="stats-number">100+</div>
+            <div class="stats-label">Profesionales atendidos</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="stats-number">24/7</div>
+            <div class="stats-label">Agendamiento automático</div>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Servicios -->
-  <section class="container px-4 px-lg-5" id="servicios">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-      <div class="col-md-10 col-lg-8 col-xl-7">
-        <h2 class="mb-4">Nuestros Servicios</h2>
-        <ul class="list-unstyled">
-          <li><strong>📱 Gestión profesional de redes sociales</strong> (Facebook, Instagram, LinkedIn)</li>
-          <li><strong>🎯 Campañas digitales</strong> en Google Ads y Meta Ads</li>
-          <li><strong>🗓️ Agenda digital</strong> integrada a redes y sitio web</li>
-          <li><strong>🤖 Asistente virtual</strong> para agendar, atender pacientes y brindar orientación médica básica</li>
-          <li><strong>🧠 Creación estratégica de campañas</strong> enfocadas a tu especialidad</li>
-          <li><strong>🎨 Diseño de contenido visual</strong>: posts, videos, imagen institucional</li>
-          <li><strong>📄 Formatería médica</strong>: consentimientos, recetarios, hojas clínicas</li>
-          <li><strong>📚 Contenido de valor</strong> con temas médicos de interés</li>
-          <li><strong>🎥 Grabación profesional</strong> de médicos en clínica (formato entrevista o cápsula)</li>
-          <li><strong>📊 Reportes mensuales</strong> con métricas de rendimiento y crecimiento</li>
-          <li><strong>🧭 Orientación gratuita</strong> para clínicas en etapa inicial</li>
-        </ul>
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios Especializados</h2>
+      <p class="text-center mb-5 mx-auto" style="max-width: 700px;">Soluciones integrales diseñadas específicamente para médicos, clínicas y profesionales de la salud que buscan destacar en el mundo digital.</p>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="feature-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Marketing Médico Integral</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success me-2"></i> Campañas en Meta Ads y Google Ads</li>
+              <li><i class="fas fa-check text-success me-2"></i> WhatsApp Business Marketing</li>
+              <li><i class="fas fa-check text-success me-2"></i> Segmentación de público objetivo</li>
+              <li><i class="fas fa-check text-success me-2"></i> Agendamiento automatizado</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="feature-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>Diseño e Imagen Profesional</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success me-2"></i> Diseño de posteos y videos</li>
+              <li><i class="fas fa-check text-success me-2"></i> Formatearía médica profesional</li>
+              <li><i class="fas fa-check text-success me-2"></i> Logotipo y manual de identidad</li>
+              <li><i class="fas fa-check text-success me-2"></i> Imagen institucional coherente</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="feature-icon">
+              <i class="fas fa-film"></i>
+            </div>
+            <h3>Contenido de Valor Médico</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success me-2"></i> Reels educativos</li>
+              <li><i class="fas fa-check text-success me-2"></i> Grabaciones en clínica</li>
+              <li><i class="fas fa-check text-success me-2"></i> Posicionamiento como referente</li>
+              <li><i class="fas fa-check text-success me-2"></i> Temas médicos relevantes</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Desarrollo Web y Sistemas</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success me-2"></i> Páginas web responsivas</li>
+              <li><i class="fas fa-check text-success me-2"></i> Portales con acceso privado</li>
+              <li><i class="fas fa-check text-success me-2"></i> Sistemas de agendamiento</li>
+              <li><i class="fas fa-check text-success me-2"></i> Integración con redes</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Reportes y Asesoría</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success me-2"></i> Reportes mensuales</li>
+              <li><i class="fas fa-check text-success me-2"></i> Asesorías personalizadas</li>
+              <li><i class="fas fa-check text-success me-2"></i> Trámite COFEPRIS</li>
+              <li><i class="fas fa-check text-success me-2"></i> Optimización continua</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Soporte Continuo</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-check text-success me-2"></i> Atención personalizada</li>
+              <li><i class="fas fa-check text-success me-2"></i> Capacitación constante</li>
+              <li><i class="fas fa-check text-success me-2"></i> Actualización de estrategias</li>
+              <li><i class="fas fa-check text-success me-2"></i> Respuesta rápida</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Beneficios -->
-  <section class="bg-light py-5" id="beneficios">
-    <div class="container px-4 px-lg-5 text-center">
-      <h2>¿Por qué elegirnos?</h2>
-      <p class="lead mt-3">
-        En la era digital, 8 de cada 10 pacientes buscan servicios médicos en internet antes de tomar una decisión. Si tu clínica no aparece, estás perdiendo pacientes cada día. Nosotros nos encargamos de tu presencia digital para que tú te concentres en lo que mejor sabes hacer: cuidar la salud de tus pacientes.
-      </p>
+  <!-- Por qué elegirnos -->
+  <section class="section bg-light" id="nosotros">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="section-title text-start">¿Por qué VIDICI?</h2>
+          <p class="lead">Especialización en el sector salud que marca la diferencia</p>
+          <p>En VIDICI entendemos los desafíos únicos que enfrentan los profesionales de la salud en el mundo digital. Nuestro equipo combina experiencia en marketing digital con conocimiento del sector médico para ofrecer soluciones realmente efectivas.</p>
+          
+          <div class="mt-4">
+            <div class="d-flex mb-3">
+              <div class="me-3 text-primary">
+                <i class="fas fa-check-circle fa-2x"></i>
+              </div>
+              <div>
+                <h5>Especialización Médica</h5>
+                <p class="mb-0">Conocemos las regulaciones y particularidades del sector salud.</p>
+              </div>
+            </div>
+            
+            <div class="d-flex mb-3">
+              <div class="me-3 text-primary">
+                <i class="fas fa-check-circle fa-2x"></i>
+              </div>
+              <div>
+                <h5>Resultados Medibles</h5>
+                <p class="mb-0">Reportes claros que muestran el crecimiento de tu consultorio.</p>
+              </div>
+            </div>
+            
+            <div class="d-flex">
+              <div class="me-3 text-primary">
+                <i class="fas fa-check-circle fa-2x"></i>
+              </div>
+              <div>
+                <h5>Paquetes Accesibles</h5>
+                <p class="mb-0">Desde $2,500 MXN con todo incluido para empezar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="video-container">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/ejemplo" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Dra. Martínez" class="rounded-circle me-3" width="60">
+              <div>
+                <h5 class="mb-0">Dra. Laura Martínez</h5>
+                <small class="text-muted">Cardióloga - Ensenada</small>
+              </div>
+            </div>
+            <p>"Gracias a VIDICI mi consultorio aumentó en un 40% las nuevas consultas en solo 3 meses. Su conocimiento del sector médico hace toda la diferencia."</p>
+            <div class="text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. González" class="rounded-circle me-3" width="60">
+              <div>
+                <h5 class="mb-0">Dr. Carlos González</h5>
+                <small class="text-muted">Odontólogo - Tijuana</small>
+              </div>
+            </div>
+            <p>"El servicio de agendamiento automático ha reducido mis llamadas perdidas en un 90%. Ahora puedo enfocarme en mis pacientes sin preocuparme por la administración."</p>
+            <div class="text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Psic. Rodríguez" class="rounded-circle me-3" width="60">
+              <div>
+                <h5 class="mb-0">Psic. Ana Rodríguez</h5>
+                <small class="text-muted">Psicóloga - Rosarito</small>
+              </div>
+            </div>
+            <p>"Los videos profesionales que grabaron para mi práctica han posicionado mi consulta como referente en la zona. Los pacientes llegan ya conociendo mi trabajo."</p>
+            <div class="text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section id="portfolio" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Nuestro Trabajo</h2>
+      <p class="text-center mb-5 mx-auto" style="max-width: 700px;">Ejemplos reales de nuestro trabajo con profesionales de la salud como tú.</p>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Campaña Médica">
+            <div class="card-body">
+              <h5 class="card-title">Campaña para Cardiólogo</h5>
+              <p class="card-text">Aumento del 65% en consultas nuevas en 2 meses.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sitio Web Dental">
+            <div class="card-body">
+              <h5 class="card-title">Sitio Web para Dentista</h5>
+              <p class="card-text">Diseño profesional con agendamiento integrado.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="https://images.unsplash.com/photo-1579165466749-5650df9d3e0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Video Médico">
+            <div class="card-body">
+              <h5 class="card-title">Serie de Videos para Psicóloga</h5>
+              <p class="card-text">Aumento del engagement en redes en un 300%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">¿Listo para llevar tu consultorio al siguiente nivel?</h2>
+      <p class="lead mb-4">Obtén un diagnóstico gratuito de tu presencia digital</p>
+      <a href="#contacto" class="btn btn-light btn-lg px-5">Solicitar Ahora</a>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section class="container px-4 px-lg-5" id="contacto">
-    <div class="row gx-4 gx-lg-5 justify-content-center text-center">
-      <div class="col-md-10 col-lg-8 col-xl-7">
-        <h2 class="mb-4">Contáctanos</h2>
-        <p>📍 Los Barandales 1810, Fracc. El Campanario, Ensenada, B.C.</p>
-        <p>📞 Teléfono: 646 524 5378</p>
-        <p>📱 WhatsApp: <a href="https://wa.me/526465245378" target="_blank">Envíanos un mensaje</a></p>
-        <p>📧 Email: <a href="mailto:vidicipublicidad@gmail.com">vidicipublicidad@gmail.com</a></p>
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h2 class="section-title text-start">Contacto</h2>
+          <p class="lead">Estamos aquí para ayudarte</p>
+          
+          <div class="mb-4">
+            <h5><i class="fas fa-map-marker-alt text-primary me-2"></i> Dirección</h5>
+            <p>Los Barandales 1810, Fracc. El Campanario, Ensenada, Baja California, México</p>
+          </div>
+          
+          <div class="mb-4">
+            <h5><i class="fas fa-phone-alt text-primary me-2"></i> Teléfono</h5>
+            <p><a href="tel:6465245378" class="text-decoration-none">646 524 5378</a></p>
+          </div>
+          
+          <div class="mb-4">
+            <h5><i class="fas fa-envelope text-primary me-2"></i> Correo</h5>
+            <p><a href="mailto:vidicipublicidad@gmail.com" class="text-decoration-none">vidicipublicidad@gmail.com</a></p>
+          </div>
+          
+          <div class="mb-4">
+            <h5><i class="fas fa-clock text-primary me-2"></i> Horario</h5>
+            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+          </div>
+          
+          <div>
+            <h5 class="mb-3">Síguenos</h5>
+            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/526465245378" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <h3 class="mb-4">Envíanos un mensaje</h3>
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="Nombre completo" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input type="tel" class="form-control" placeholder="Teléfono">
+                </div>
+                <div class="mb-3">
+                  <select class="form-select">
+                    <option selected disabled>¿Qué servicio te interesa?</option>
+                    <option>Marketing Médico Integral</option>
+                    <option>Diseño e Imagen Profesional</option>
+                    <option>Contenido de Valor Médico</option>
+                    <option>Desarrollo Web y Sistemas</option>
+                    <option>Reportes y Asesoría</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="4" placeholder="Cuéntanos sobre tu proyecto" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <!-- Firebase SDK y autenticación -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
-    // Configuración de Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyDoIL_AMS4qSGnQUBIMizJ6yeikrpzV9Co",
-      authDomain: "medicaleads-e004f.firebaseapp.com",
-      projectId: "medicaleads-e004f",
-      storageBucket: "medicaleads-e004f.appspot.com",
-      messagingSenderId: "435054599740",
-      appId: "1:435054599740:web:d1cf45cbb000e961186d39",
-      measurementId: "G-HCEBXT6BJP"
-    };
+  <!-- Mapa -->
+  <div class="container-fluid p-0">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.254715156982!2d-116.6300009243382!3d32.46978817378722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d7713c0f1a9a7f%3A0x1a3b3b3b3b3b3b3b!2sLos%20Barandales%201810%2C%20El%20Campanario%2C%2022880%20Ensenada%2C%20B.C.!5e0!3m2!1ses!2smx!4v1620000000000!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
-    // Inicializa Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const auth = getAuth();
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <img src="https://via.placeholder.com/150x50?text=VIDICI" alt="VIDICI Marketing Digital" height="40" class="mb-3">
+          <p>Especialistas en marketing digital para el sector salud. Ayudamos a médicos y clínicas a crecer en el mundo digital.</p>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5>Servicios</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white-50">Marketing Médico</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50">Diseño Profesional</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50">Contenido de Valor</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50">Desarrollo Web</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5>Enlaces</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#inicio" class="text-white-50">Inicio</a></li>
+            <li class="mb-2"><a href="#servicios" class="text-white-50">Servicios</a></li>
+            <li class="mb-2"><a href="#nosotros" class="text-white-50">Nosotros</a></li>
+            <li class="mb-2"><a href="#contacto" class="text-white-50">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h5>Suscríbete</h5>
+          <p class="text-white-50">Recibe consejos de marketing médico en tu correo.</p>
+          <form class="mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Tu correo">
+              <button class="btn btn-primary" type="button">Suscribir</button>
+            </div>
+          </form>
+          <div>
+            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/526465245378" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 mb-4">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">© 2023 VIDICI Publicidad Digital. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">
+            <a href="#" class="text-white-50 me-3">Términos</a>
+            <a href="#" class="text-white-50">Privacidad</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    // Referencias a elementos del DOM
-    const loginSection = document.getElementById("login-section");
-    const mainSection = document.getElementById("main-section");
-    const loginBtn = document.getElementById("login-btn");
-    const logoutBtn = document.getElementById("logout-btn");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const loginError = document.getElementById("login-error");
-
-    // Evento de login
-    loginBtn.addEventListener("click", () => {
-      const email = emailInput.value;
-      const password = passwordInput.value;
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          loginError.textContent = "";
-          emailInput.value = "";
-          passwordInput.value = "";
-        })
-        .catch((error) => {
-          loginError.textContent = "Error al iniciar sesión: " + error.message;
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Activar tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    
+    // Smooth scrolling para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-    });
-
-    // Evento de logout
-    logoutBtn.addEventListener("click", () => {
-      signOut(auth);
-    });
-
-    // Escucha el estado de autenticación
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        loginSection.classList.add("hidden");
-        mainSection.classList.remove("hidden");
-      } else {
-        loginSection.classList.remove("hidden");
-        mainSection.classList.add("hidden");
-      }
+      });
     });
   </script>
 </body>
