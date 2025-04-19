@@ -3,160 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Vidici Marketing</title>
+  <title>VIDICI Publicidad Médica</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
+      background-color: #f8f9fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
     }
-    header {
-      background: linear-gradient(to right, #00bcd4, #2196f3);
+    .hero {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
       color: white;
-      padding: 1.5rem;
+      padding: 60px 20px;
       text-align: center;
     }
-    nav {
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      color: #2196f3;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .highlight {
-      background: #e3f2fd;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
+    .btn-primary {
+      background-color: #007bff;
       border: none;
-      border-radius: 10px;
     }
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .socials a {
-      text-decoration: none;
-      color: #2196f3;
-      font-size: 1.2rem;
-    }
-    form {
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    input, textarea, button {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    button {
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #1976d2;
+    .section {
+      padding: 60px 20px;
     }
     footer {
-      background: #2196f3;
+      background-color: #343a40;
       color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 20px;
     }
-    @media (max-width: 768px) {
-      iframe {
-        height: 300px;
-      }
-      .socials {
-        flex-direction: column;
-        align-items: center;
-      }
+    .nav-link {
+      color: white;
+    }
+    .form-section input, .form-section textarea {
+      margin-bottom: 10px;
+    }
+    .restricted-section {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Vidici Marketing</h1>
-    <p>Impulsamos tu presencia digital al siguiente nivel</p>
-  </header>
-
-  <nav>
-    <a href="#servicios">Servicios</a>
-    <a href="#video">Video</a>
-    <a href="#redes">Redes Sociales</a>
-    <a href="#contacto">Contacto</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">VIDICI Marketing Médico</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#login">Ingresar</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <section id="servicios">
-    <div class="highlight">
-      <h2>¿Qué ofrecemos?</h2>
-      <p>Diseño gráfico, redes sociales, anuncios, embudos de venta y más para posicionar tu marca en internet.</p>
+  <section class="hero">
+    <h1>Transformamos tu clínica médica con marketing digital</h1>
+    <p>Gestión de redes sociales, campañas digitales, diseño y más...</p>
+    <a href="#contacto" class="btn btn-light">Solicita tu diagnóstico gratuito</a>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <h2 class="text-center">Nuestros Servicios</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <h5>📲 Gestión de Redes Sociales</h5>
+          <p>Facebook, Instagram, LinkedIn, TikTok</p>
+        </div>
+        <div class="col-md-4">
+          <h5>🎯 Campañas Digitales</h5>
+          <p>Google Ads, Meta Ads, creación de campañas, optimización continua</p>
+        </div>
+        <div class="col-md-4">
+          <h5>🤖 Asistente Virtual</h5>
+          <p>Agendamiento, atención básica, canalización</p>
+        </div>
+        <div class="col-md-4">
+          <h5>📆 Agenda Digital</h5>
+          <p>Control de citas profesional para tu clínica</p>
+        </div>
+        <div class="col-md-4">
+          <h5>🎥 Grabación de Personal Médico</h5>
+          <p>Videos en clínica para generar confianza y posicionamiento</p>
+        </div>
+        <div class="col-md-4">
+          <h5>📋 Formatearía Médica</h5>
+          <p>Recetarios, consentimientos, papelería digital y más</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="video">
-    <h2>Conócenos en acción</h2>
-    <iframe src="https://www.tiktok.com/embed/7488013965981879557" allowfullscreen></iframe>
-  </section>
-
-  <section id="redes">
-    <h2>Síguenos en nuestras redes</h2>
-    <div class="socials">
-      <a href="https://www.facebook.com/vidicimarketing/" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/vidicimarketing/" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@vidicimarketing" target="_blank">TikTok</a>
+  <section class="section bg-light text-center">
+    <h2>📽 Video Destacado</h2>
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.tiktok.com/embed/v2/7488013965981879557" frameborder="0" allowfullscreen></iframe>
     </div>
-    <br />
-    <h3>Última publicación destacada</h3>
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D1154081183082927%26set%3Da.607268554430862&show_text=true&width=500" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
   </section>
 
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <form action="https://formspree.io/f/your-id" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" placeholder="Escribe tu mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
+  <section class="section text-center">
+    <h2>📰 Publicación Reciente</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D1154081183082927%26set%3Da.607268554430862&show_text=true&width=500" width="500" height="680" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Vidici Marketing. Todos los derechos reservados.</p>
+  <section class="section bg-light" id="contacto">
+    <div class="container">
+      <h2 class="text-center">Contáctanos</h2>
+      <form class="form-section" action="https://formspree.io/f/mwkdyelv" method="POST">
+        <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+        <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required>
+        <textarea name="message" class="form-control" placeholder="Tu mensaje" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="login">
+    <div class="container">
+      <h2 class="text-center">Área exclusiva para clientes</h2>
+      <input type="email" id="email" class="form-control mb-2" placeholder="Correo">
+      <input type="password" id="password" class="form-control mb-2" placeholder="Contraseña">
+      <button class="btn btn-primary" onclick="login()">Ingresar</button>
+    </div>
+  </section>
+
+  <section class="section restricted-section" id="manuales">
+    <div class="container">
+      <h3>📚 Manuales para tu clínica</h3>
+      <p>Accede a nuestros recursos de capacitación.</p>
+    </div>
+  </section>
+
+  <section class="section restricted-section" id="agenda">
+    <div class="container">
+      <h3>📆 Agenda de tu Clínica</h3>
+      <p>Visualiza tu calendario personalizado.</p>
+    </div>
+  </section>
+
+  <footer class="text-center">
+    <p>Síguenos: 
+      <a href="https://www.facebook.com/vidicimarketing/" class="text-white">Facebook</a> | 
+      <a href="https://www.instagram.com/vidicimarketing/" class="text-white">Instagram</a> | 
+      <a href="https://www.tiktok.com/@vidicimarketing" class="text-white">TikTok</a>
+    </p>
+    <p>&copy; 2025 VIDICI Publicidad Médica</p>
   </footer>
+
+  <!-- Firebase + Login Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDoIL_AMS4qSGnQUBIMizJ6yeikrpzV9Co",
+      authDomain: "medicaleads-e004f.firebaseapp.com",
+      projectId: "medicaleads-e004f",
+      storageBucket: "medicaleads-e004f.appspot.com",
+      messagingSenderId: "435054599740",
+      appId: "1:435054599740:web:d1cf45cbb000e961186d39",
+      measurementId: "G-HCEBXT6BJP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    window.login = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          document.getElementById("manuales").style.display = "block";
+          document.getElementById("agenda").style.display = "block";
+          alert("Acceso concedido. Bienvenido a tu panel privado.");
+        })
+        .catch((error) => {
+          alert("Error al ingresar: " + error.message);
+        });
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
