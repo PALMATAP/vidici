@@ -1,42 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Médico</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIDICI Publicidad Médica</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .hidden { display: none; }
-    #login-section, #main-section { max-width: 400px; margin: auto; }
-    #manuales, #agenda { margin-top: 20px; padding: 15px; background: #f1f1f1; border-radius: 8px; }
-    button { margin-top: 10px; }
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .hero {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+    }
+    .nav-link {
+      color: white;
+    }
+    .form-section input, .form-section textarea {
+      margin-bottom: 10px;
+    }
+    .restricted-section {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <h1>Bienvenido al Portal Médico</h1>
-
-  <div id="login-section">
-    <h2>Iniciar Sesión</h2>
-    <input type="email" id="email" placeholder="Correo electrónico" /><br />
-    <input type="password" id="password" placeholder="Contraseña" /><br />
-    <button id="login-btn">Ingresar</button>
-    <p id="login-error" style="color:red;"></p>
-  </div>
-
-  <div id="main-section" class="hidden">
-    <h2>Secciones Disponibles</h2>
-    <p>Has iniciado sesión correctamente.</p>
-    <div id="manuales">
-      <h3>📘 Manuales</h3>
-      <p>Aquí puedes acceder a los manuales de uso y procedimientos.</p>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">VIDICI Marketing Médico</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#login">Ingresar</a></li>
+        </ul>
+      </div>
     </div>
-    <div id="agenda">
-      <h3>📅 Agenda</h3>
-      <p>Consulta tu agenda médica y próximos eventos.</p>
-    </div>
-    <button id="logout-btn">Cerrar Sesión</button>
-  </div>
+  </nav>
 
+  <section class="hero">
+    <h1>Transformamos tu clínica médica con marketing digital</h1>
+    <p>Gestión de redes sociales, campañas digitales, diseño y más...</p>
+    <a href="#contacto" class="btn btn-light">Solicita tu diagnóstico gratuito</a>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <h2 class="text-center">Nuestros Servicios</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <h5>📲 Gestión de Redes Sociales</h5>
+          <p>Facebook, Instagram, LinkedIn, TikTok</p>
+        </div>
+        <div class="col-md-4">
+          <h5>🎯 Campañas Digitales</h5>
+          <p>Google Ads, Meta Ads, creación de campañas, optimización continua</p>
+        </div>
+        <div class="col-md-4">
+          <h5>🤖 Asistente Virtual</h5>
+          <p>Agendamiento, atención básica, canalización</p>
+        </div>
+        <div class="col-md-4">
+          <h5>📆 Agenda Digital</h5>
+          <p>Control de citas profesional para tu clínica</p>
+        </div>
+        <div class="col-md-4">
+          <h5>🎥 Grabación de Personal Médico</h5>
+          <p>Videos en clínica para generar confianza y posicionamiento</p>
+        </div>
+        <div class="col-md-4">
+          <h5>📋 Formatearía Médica</h5>
+          <p>Recetarios, consentimientos, papelería digital y más</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section bg-light text-center">
+    <h2>📽 Video Destacado</h2>
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.tiktok.com/embed/v2/7488013965981879557" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="section text-center">
+    <h2>📰 Publicación Reciente</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D1154081183082927%26set%3Da.607268554430862&show_text=true&width=500" width="500" height="680" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+  <!-- Encabezado -->
+  <header class="masthead" style="background-image: url('assets/img/clinica-digital.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7 text-center">
+          <div class="site-heading">
+            <h1>Tu clínica visible, tu agenda llena</h1>
+            <span class="subheading">Marketing digital especializado en clínicas médicas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Servicios -->
+  <section class="container px-4 px-lg-5" id="servicios">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <h2 class="mb-4">Nuestros Servicios</h2>
+        <ul class="list-unstyled">
+          <li><strong>📱 Gestión profesional de redes sociales</strong> (Facebook, Instagram, LinkedIn)</li>
+          <li><strong>🎯 Campañas digitales</strong> en Google Ads y Meta Ads</li>
+          <li><strong>🗓️ Agenda digital</strong> integrada a redes y sitio web</li>
+          <li><strong>🤖 Asistente virtual</strong> para agendar, atender pacientes y brindar orientación médica básica</li>
+          <li><strong>🧠 Creación estratégica de campañas</strong> enfocadas a tu especialidad</li>
+          <li><strong>🎨 Diseño de contenido visual</strong>: posts, videos, imagen institucional</li>
+          <li><strong>📄 Formatería médica</strong>: consentimientos, recetarios, hojas clínicas</li>
+          <li><strong>📚 Contenido de valor</strong> con temas médicos de interés</li>
+          <li><strong>🎥 Grabación profesional</strong> de médicos en clínica (formato entrevista o cápsula)</li>
+          <li><strong>📊 Reportes mensuales</strong> con métricas de rendimiento y crecimiento</li>
+          <li><strong>🧭 Orientación gratuita</strong> para clínicas en etapa inicial</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="bg-light py-5" id="beneficios">
+    <div class="container px-4 px-lg-5 text-center">
+      <h2>¿Por qué elegirnos?</h2>
+      <p class="lead mt-3">
+        En la era digital, 8 de cada 10 pacientes buscan servicios médicos en internet antes de tomar una decisión. Si tu clínica no aparece, estás perdiendo pacientes cada día. Nosotros nos encargamos de tu presencia digital para que tú te concentres en lo que mejor sabes hacer: cuidar la salud de tus pacientes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="container px-4 px-lg-5" id="contacto">
+    <div class="row gx-4 gx-lg-5 justify-content-center text-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <h2 class="mb-4">Contáctanos</h2>
+        <p>📍 Los Barandales 1810, Fracc. El Campanario, Ensenada, B.C.</p>
+        <p>📞 Teléfono: 646 524 5378</p>
+        <p>📱 WhatsApp: <a href="https://wa.me/526465245378" target="_blank">Envíanos un mensaje</a></p>
+        <p>📧 Email: <a href="mailto:vidicipublicidad@gmail.com">vidicipublicidad@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
   <!-- Firebase SDK y autenticación -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
