@@ -3,177 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal VIDICI - Acceso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>VIDICI - Marketing Médico</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #1CB5E0, #000851);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
     }
-
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
+    .navbar {
+      background-color: #4e54c8;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    .carousel-item img {
+      height: 70vh;
+      object-fit: cover;
+    }
+    .section-title {
+      margin: 40px 0 20px;
       text-align: center;
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #111;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      background-color: #1CB5E0;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #168fba;
-    }
-
-    #status {
-      margin-top: 15px;
-      color: #e63946;
       font-weight: bold;
     }
-
-    #protected {
-      display: none;
-      margin-top: 25px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      text-align: left;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .services, .videos, .login-section, .contact-form {
+      padding: 30px;
     }
-
-    .icon {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #1CB5E0;
+    .form-control, .btn {
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #4e54c8;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon">
-      <i class="fas fa-user-md"></i>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">VIDICI Marketing Médico</a>
     </div>
-    <h2>Acceso al Portal de Médicos VIDICI</h2>
-    <input type="email" id="email" placeholder="Correo electrónico">
-    <input type="password" id="password" placeholder="Contraseña">
-    <button onclick="login()">Iniciar sesión</button>
-    <button onclick="register()">Registrarse</button>
-    <button onclick="logout()">Cerrar sesión</button>
-    <p id="status"></p>
+  </nav>
 
-    <div id="protected">
-      <h3>Área protegida</h3>
-      <ul>
-        <li><strong>Manuales:</strong> Accede a documentos de procesos internos.</li>
-        <li><strong>Agenda:</strong> Gestiona citas y actividades de tu clínica.</li>
-        <li><strong>Beneficios adicionales:</strong> Asesoría gratuita, reportes y campañas activas.</li>
-      </ul>
+  <!-- BANNER CARRUSEL -->
+  <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/477439707_1123803836110662_6534534086363814291_n.jpg" class="d-block w-100" alt="Banner 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/484035377_620020390900086_2695464918066606679_n.jpg" class="d-block w-100" alt="Banner 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/488490176_1173833754443829_984894207653615679_n.jpg" class="d-block w-100" alt="Banner 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- SERVICIOS -->
+  <div class="container services">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <ul>
+      <li>Gestión de redes sociales</li>
+      <li>Campañas Google Ads & Meta Ads</li>
+      <li>Agenda digital</li>
+      <li>Asistente virtual (agendamiento, orientación básica)</li>
+      <li>Diseño de post, videos, imagen institucional</li>
+      <li>Formato clínico (recetarios, hojas de consentimiento)</li>
+      <li>Contenido de valor en salud</li>
+      <li>Grabación de personal médico</li>
+      <li>Reportes mensuales</li>
+      <li>Orientación gratuita</li>
+    </ul>
+  </div>
+
+  <!-- VIDEOS Y REDES -->
+  <div class="container videos">
+    <h2 class="section-title">Contenido Destacado</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <iframe width="100%" height="315" src="https://www.tiktok.com/embed/v2/7488013965981879557" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6">
+        <img src="https://www.facebook.com/photo?fbid=1154081183082927&set=a.607268554430862" class="img-fluid rounded shadow">
+      </div>
     </div>
   </div>
 
-  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDoIL_AMS4qSGnQUBIMizJ6yeikrpzV9Co",
-      authDomain: "medicaleads-e004f.firebaseapp.com",
-      projectId: "medicaleads-e004f",
-      storageBucket: "medicaleads-e004f.appspot.com",
-      messagingSenderId: "435054599740",
-      appId: "1:435054599740:web:d1cf45cbb000e961186d39"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+  <!-- LOGIN / REGISTRO -->
+  <div class="container login-section">
+    <h2 class="section-title">Portal Clientes</h2>
+    <p>Accede a tu cuenta para ver manuales y tu agenda personalizada.</p>
+    <a href="login.html" class="btn btn-primary btn-lg">Ingresar / Registrarse</a>
+  </div>
 
-    function login() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      auth.signInWithEmailAndPassword(email, password)
-        .then(user => {
-          document.getElementById("status").innerText = "¡Bienvenido!";
-          showProtected();
-        })
-        .catch(error => {
-          document.getElementById("status").innerText = error.message;
-        });
-    }
+  <!-- FORMULARIO DE CONTACTO -->
+  <div class="container contact-form">
+    <h2 class="section-title">Solicita Información</h2>
+    <form>
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Nombre completo">
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="Correo electrónico">
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" placeholder="Mensaje o solicitud" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+  </div>
 
-    function register() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      auth.createUserWithEmailAndPassword(email, password)
-        .then(user => {
-          document.getElementById("status").innerText = "Usuario registrado correctamente. ¡Ahora inicia sesión!";
-        })
-        .catch(error => {
-          document.getElementById("status").innerText = error.message;
-        });
-    }
+  <!-- FOOTER -->
+  <footer>
+    <p>📍 Los Barandales 1810, Fracc. El Campanario, Ensenada, B.C.</p>
+    <p>📞 646 524 5378 | ✉️ vidicipublicidad@gmail.com</p>
+    <p>
+      <a href="https://www.facebook.com/vidicimarketing/" target="_blank"><i class="fab fa-facebook fa-lg mx-2"></i></a>
+      <a href="https://www.instagram.com/vidicimarketing/" target="_blank"><i class="fab fa-instagram fa-lg mx-2"></i></a>
+      <a href="https://www.tiktok.com/@vidicimarketing" target="_blank"><i class="fab fa-tiktok fa-lg mx-2"></i></a>
+    </p>
+    <p class="small">© 2024 VIDICI Marketing Médico</p>
+  </footer>
 
-    function logout() {
-      auth.signOut().then(() => {
-        document.getElementById("status").innerText = "Sesión cerrada.";
-        hideProtected();
-      });
-    }
-
-    function showProtected() {
-      document.getElementById("protected").style.display = "block";
-    }
-
-    function hideProtected() {
-      document.getElementById("protected").style.display = "none";
-    }
-
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        showProtected();
-        document.getElementById("status").innerText = "Sesión activa";
-      } else {
-        hideProtected();
-      }
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
