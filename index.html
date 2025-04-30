@@ -26,7 +26,7 @@
     }
     
     .hero {
-      background: linear-gradient(135deg, var(--primary), var(--secondary)), url('https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/hero_images/banner-vidici.jpg') no-repeat center center/cover;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(30, 64, 175, 0.85)), url('https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/hero_images/banner-vidici.jpg') no-repeat center center/cover;
       color: white;
       padding: 100px 0;
       position: relative;
@@ -121,18 +121,37 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
       color: white;
-      margin-right: 10px;
+      margin-right: 15px;
       transition: all 0.3s;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
     .social-icon:hover {
       background: var(--primary);
-      transform: translateY(-3px);
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .social-facebook:hover {
+      background: #3b5998;
+    }
+    
+    .social-instagram:hover {
+      background: #e1306c;
+    }
+    
+    .social-tiktok:hover {
+      background: #000000;
+    }
+    
+    .social-whatsapp:hover {
+      background: #25D366;
     }
     
     .form-control {
@@ -221,6 +240,12 @@
       }
       .navbar-brand img {
         height: 40px;
+      }
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin-right: 10px;
       }
     }
   </style>
@@ -446,8 +471,8 @@
                 <i class="fas fa-check-circle fa-2x"></i>
               </div>
               <div>
-                <h5>Paquetes Integrales</h5>
-                <p class="mb-0">Desde $3,500 MXN con todo incluido para comenzar a ver resultados.</p>
+                <h5>Paquetes escalables</h5>
+                <p class="mb-0">Desde $3,500 MXN para comenzar a mejorar la presencia digital de tu clínica.</p>
               </div>
             </div>
           </div>
@@ -625,10 +650,10 @@
           
           <div>
             <h5 class="mb-3">Síguenos</h5>
-            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/526465245378" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon social-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon social-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon social-tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/526465245378" class="social-icon social-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
         
@@ -650,7 +675,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4 mb-lg-0">
-          <img src="https://drive.google.com/uc?export=view&id=1zPfmmdj0WDLhs07p0UylupdmEXpxuS3I" alt="Medicaleads by VIDICI - Marketing Digital para el sector salud" height="50" class="mb-3" loading="lazy">
+          <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/logos/logo-medicaleads-sitio-web-bco.png" alt="Medicaleads by VIDICI - Marketing Digital para el sector salud" height="50" class="mb-3" loading="lazy">
           <p>Especialistas en estrategias digitales 360° para el sector salud. Transformamos consultorios y clínicas mediante inbound marketing y experiencia del paciente.</p>
         </div>
         <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
@@ -681,10 +706,10 @@
             </div>
           </form>
           <div>
-            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/526465245378" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon social-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon social-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon social-tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/526465245378" class="social-icon social-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
       </div>
@@ -723,6 +748,11 @@
     
     // Inicializar carruseles
     var videoCarousel = new bootstrap.Carousel(document.getElementById('videoCarousel'), {
+      interval: 5000,
+      ride: 'carousel'
+    });
+    
+    var portfolioCarousel = new bootstrap.Carousel(document.getElementById('portfolioCarousel'), {
       interval: 5000,
       ride: 'carousel'
     });
