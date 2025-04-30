@@ -26,22 +26,11 @@
     }
     
     .hero {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, var(--primary), var(--secondary)), url('https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/hero_images/banner-vidici.jpg') no-repeat center center/cover;
       color: white;
       padding: 100px 0;
       position: relative;
       overflow: hidden;
-    }
-    
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://drive.google.com/uc?export=view&id=1OiI3PwQ-5B9RwfSqwHoyDknrO2NViOI8') no-repeat center center/cover;
-      opacity: 0.2;
     }
     
     .navbar {
@@ -188,33 +177,23 @@
       width: 80%;
     }
     
-    .gallery-container {
-      margin: 40px auto;
-    }
-    
-    .gallery-item {
-      margin-bottom: 30px;
-      transition: all 0.3s;
-    }
-    
-    .gallery-item:hover {
-      transform: scale(1.02);
-    }
-    
-    .gallery-item img {
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    .portfolio-img-carousel .carousel-item img {
       width: 100%;
-      height: auto;
-    }
-    
-    .map-container {
       height: 500px;
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      margin-top: 30px;
+      object-fit: contain;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .portfolio-img-carousel .carousel-caption {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border-radius: 8px;
+      padding: 15px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
     }
     
     .strategy-badge {
@@ -237,6 +216,9 @@
       .portfolio-carousel .carousel-item {
         height: 400px;
       }
+      .portfolio-img-carousel .carousel-item img {
+        height: 300px;
+      }
       .navbar-brand img {
         height: 40px;
       }
@@ -248,7 +230,7 @@
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="https://drive.google.com/uc?export=view&id=1u-18KNW3RKNfcYZr2OCbOm9Vz9igwhuY" alt="Medicaleads by VIDICI - Especialistas en Marketing Digital para el sector salud" height="50" loading="lazy">
+        <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/logos/logo-medicaleads-sitio-web.png" alt="Medicaleads by VIDICI - Especialistas en Marketing Digital para el sector salud" height="50" loading="lazy">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -279,7 +261,7 @@
           </div>
         </div>
         <div class="col-lg-6 d-none d-lg-block">
-          <img src="https://drive.google.com/uc?export=view&id=1dP4yNpjkPujYLGyZKdxlt7PZNAcs0YUn" alt="Estrategia de marketing digital para médicos y clínicas" class="img-fluid rounded-3 shadow" loading="lazy">
+          <!-- Imagen eliminada según solicitud -->
         </div>
       </div>
     </div>
@@ -538,48 +520,68 @@
         </button>
       </div>
       
-      <!-- Galería de Portafolio -->
+      <!-- Carrusel de Imágenes del Portafolio -->
       <h3 class="text-center mb-4 mt-5">Casos de Éxito - Formatearía Institucional</h3>
-      <div class="row gallery-container">
-        <div class="col-md-4 gallery-item">
-          <img src="https://drive.google.com/uc?export=view&id=1JufehqnUk5uMO5M8Q4fOAw8jSTUdruxg" alt="Diseño profesional de tarjetas de presentación y recetarios médicos con branding consistente" class="img-fluid" loading="lazy">
-          <div class="text-center mt-2">
-            <h5>Identidad Corporativa</h5>
-            <p>Diseño profesional de tarjetas de presentación, recetarios y papelería con branding consistente que refuerza la imagen de marca en cada interacción con pacientes.</p>
+      <div id="portfolioCarousel" class="carousel slide portfolio-img-carousel" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4"></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Tarjetas de Presentación -->
+          <div class="carousel-item active">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-1.jpg" class="d-block w-100" alt="Tarjetas de Presentación y recetarios médicos">
+            <div class="carousel-caption">
+              <h5>Identidad Corporativa</h5>
+              <p>Diseño profesional para primera impresión con Branding consistente en cada interacción con pacientes. Tarjetas de presentación y recetarios que refuerzan tu imagen profesional.</p>
+            </div>
+          </div>
+          
+          <!-- Documentación Médica -->
+          <div class="carousel-item">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-2.jpg" class="d-block w-100" alt="Documentación médica profesional">
+            <div class="carousel-caption">
+              <h5>Documentación Médica Profesional</h5>
+              <p>Historia clínica, hoja de consentimiento informado y documentos legales que cumplen con normativas y proyectan profesionalismo y organización en tu consultorio.</p>
+            </div>
+          </div>
+          
+          <!-- Protocolos de atención -->
+          <div class="carousel-item">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-4.jpg" class="d-block w-100" alt="Protocolos de atención estandarizados">
+            <div class="carousel-caption">
+              <h5>Protocolos de Atención</h5>
+              <p>Homologación de la comunicación en clínica, estableciendo protocolos y procedimientos claros que mejoran la experiencia de los pacientes y por ende la recomendación.</p>
+            </div>
+          </div>
+          
+          <!-- Material impreso -->
+          <div class="carousel-item">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-3.jpg" class="d-block w-100" alt="Material impreso profesional">
+            <div class="carousel-caption">
+              <h5>Formatos Impresos Profesionales</h5>
+              <p>Volantes, carpetas, recetarios, tarjetas de presentación y papelería institucional con diseño formal y atractivo, integrando herramientas digitales como códigos QR para localización de clínica.</p>
+            </div>
+          </div>
+          
+          <!-- Posicionamiento -->
+          <div class="carousel-item">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-5.jpg" class="d-block w-100" alt="Posicionamiento de negocio">
+            <div class="carousel-caption">
+              <h5>Posicionamiento de Negocio</h5>
+              <p>Estrategias para generar recomendaciones de pacientes, mejorar la visibilidad de tu clínica y gestionar reseñas positivas que construyen tu reputación online.</p>
+            </div>
           </div>
         </div>
-        
-        <div class="col-md-4 gallery-item">
-          <img src="https://drive.google.com/uc?export=view&id=1Fv-cdFuHDVqCf-wZrpkrej-tenzTeXZL" alt="Documentos médicos profesionales como historias clínicas y formatos de consentimiento informado" class="img-fluid" loading="lazy">
-          <div class="text-center mt-2">
-            <h5>Documentación Médica</h5>
-            <p>Diseño de historias clínicas, hojas de consentimiento informado y documentos legales que cumplen con normativas y proyectan profesionalismo.</p>
-          </div>
-        </div>
-        
-        <div class="col-md-4 gallery-item">
-          <img src="https://drive.google.com/uc?export=view&id=1ejU3kFByHXGwsqzzmR1HH-O0eIvfMCFI" alt="Protocolos de atención estandarizados para clínicas y consultorios médicos" class="img-fluid" loading="lazy">
-          <div class="text-center mt-2">
-            <h5>Protocolos de Atención</h5>
-            <p>Homologación de procesos con manuales y protocolos que mejoran la experiencia del paciente y estandarizan la calidad del servicio.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 gallery-item">
-          <img src="https://drive.google.com/uc?export=view&id=1JufehqnUk5uMO5M8Q4fOAw8jSTUdruxg" alt="Material impreso profesional para clínicas con integración de herramientas digitales" class="img-fluid" loading="lazy">
-          <div class="text-center mt-2">
-            <h5>Material Promocional</h5>
-            <p>Volantes, carpetas y material impreso con diseño profesional que integra herramientas digitales como códigos QR para mayor engagement.</p>
-          </div>
-        </div>
-        
-        <div class="col-md-4 gallery-item">
-          <img src="https://drive.google.com/uc?export=view&id=1FTbGpegA7XQK0RMuZ07Yr8PCrAX2I9GW" alt="Estrategias de posicionamiento y reputación online para clínicas médicas" class="img-fluid" loading="lazy">
-          <div class="text-center mt-2">
-            <h5>Posicionamiento Digital</h5>
-            <p>Estrategias integrales para mejorar la visibilidad online, gestión de reseñas y reputación digital que generan más recomendaciones.</p>
-          </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
     </div>
   </section>
@@ -632,50 +634,16 @@
         
         <div class="col-lg-6">
           <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-              <h3 class="mb-4">Agenda una asesoría gratuita</h3>
-              <form>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre completo" required>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <input type="tel" class="form-control" placeholder="Teléfono">
-                </div>
-                <div class="mb-3">
-                  <select class="form-select">
-                    <option selected disabled>¿Qué servicio te interesa?</option>
-                    <option>Marketing Digital 360°</option>
-                    <option>Experiencia del Paciente</option>
-                    <option>Contenido de Valor Médico</option>
-                    <option>Desarrollo Web Médico</option>
-                    <option>Asistente Digital</option>
-                    <option>Paquete Integral</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <textarea class="form-control" rows="4" placeholder="Cuéntanos sobre tu consultorio o clínica" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-              </form>
+            <div class="card-body p-4 text-center">
+              <h3 class="mb-4">¿Necesitas una estrategia digital para tu consultorio?</h3>
+              <p class="mb-4">Agenda una asesoría gratuita con nuestros especialistas en marketing médico.</p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5B6KW85AzWcSAFIvyo0tQql7LDb4pX5FCiPoJBIwzWRFjpw/viewform" class="btn btn-primary btn-lg" target="_blank">Agendar Asesoría</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Mapa -->
-  <div class="container section">
-    <h2 class="section-title">Nuestra Ubicación en Ensenada</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.918758393659!2d-116.63686092453758!3d32.46345367378174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d7710d9f865f5f%3A0x6a8a2a9a5b0e0e0!2sLos%20Barandales%201810%2C%20El%20Campanario%2C%2022880%20Ensenada%2C%20B.C.!5e0!3m2!1ses-419!2smx!4v1714500000000!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer>
