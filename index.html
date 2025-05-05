@@ -6,6 +6,40 @@
   <meta name="description" content="Medicaleads by VIDICI - Especialistas en Marketing Digital 360° para el sector salud. Atracción de pacientes, posicionamiento web y estrategias de inbound marketing para médicos y clínicas.">
   <meta name="keywords" content="marketing médico, pacientes digitales, posicionamiento web para doctores, inbound marketing salud, estrategia digital 360° para clínicas, captación pacientes online">
   <title>Medicaleads by VIDICI | Marketing Digital 360° para el Sector Salud</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+  
+  <!-- Schema markup para negocio local -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Medicaleads by VIDICI",
+      "description": "Especialistas en Marketing Digital 360° para el sector salud",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Barandales 1810, Fracc. El Campanario",
+        "addressLocality": "Ensenada",
+        "addressRegion": "Baja California",
+        "postalCode": "22890",
+        "addressCountry": "MX"
+      },
+      "telephone": "+526465245378",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "image": "https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/logos/logo-medicaleads-sitio-web.png",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/vidicimarketing/",
+        "https://www.instagram.com/vidicimarketing/",
+        "https://www.tiktok.com/@vidicimarketing",
+        "https://www.linkedin.com/company/medicaleads-by-vidici"
+      ]
+    }
+  </script>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -225,9 +259,31 @@
       margin-bottom: 15px;
     }
     
+    /* Mejoras de accesibilidad */
+    .nav-link:focus, .btn:focus, .social-icon:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 8%;
+    }
+    
+    /* Mejoras de contraste */
+    .text-white-50 {
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+    
+    .carousel-caption h5 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    /* Optimización para móviles */
     @media (max-width: 768px) {
       .hero {
         padding: 80px 0;
+        background-attachment: scroll;
       }
       .section {
         padding: 60px 0;
@@ -247,6 +303,12 @@
         font-size: 1rem;
         margin-right: 10px;
       }
+      .stats-item {
+        padding: 15px 10px;
+      }
+      .stats-number {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -254,10 +316,14 @@
   <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/logos/logo-medicaleads-sitio-web.png" alt="Medicaleads by VIDICI - Especialistas en Marketing Digital para el sector salud" height="50" loading="lazy">
+      <a class="navbar-brand" href="#inicio" aria-label="Medicaleads by VIDICI - Inicio">
+        <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/logos/logo-medicaleads-sitio-web.png" 
+             alt="Medicaleads by VIDICI - Especialistas en Marketing Digital para el sector salud" 
+             height="50" 
+             loading="lazy"
+             width="180">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -267,7 +333,7 @@
           <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li class="nav-item ms-lg-3"><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5B6KW85AzWcSAFIvyo0tQql7LDb4pX5FCiPoJBIwzWRFjpw/viewform" class="btn btn-primary" target="_blank">Diagnóstico Gratis</a></li>
+          <li class="nav-item ms-lg-3"><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5B6KW85AzWcSAFIvyo0tQql7LDb4pX5FCiPoJBIwzWRFjpw/viewform" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Diagnóstico Gratis</a></li>
         </ul>
       </div>
     </div>
@@ -281,11 +347,11 @@
           <h1 class="display-4 fw-bold mb-4">Estrategia Digital 360° para el Sector Salud</h1>
           <p class="lead mb-4">Atracción de pacientes calificados, posicionamiento de marca y crecimiento sostenido para tu consultorio o clínica médica.</p>
           <div class="d-flex flex-wrap gap-3">
-          <a href="#servicios" class="btn btn-outline-light btn-lg">Conoce Nuestros Servicios</a>
+            <a href="#servicios" class="btn btn-outline-light btn-lg">Conoce Nuestros Servicios</a>
           </div>
         </div>
-        <div class="col-lg-6 d-none d-lg-block">
-          <!-- Imagen eliminada según solicitud -->
+        <div class="col-lg-6 d-none d-lg-block" aria-hidden="true">
+          <!-- Espacio reservado para imagen opcional -->
         </div>
       </div>
     </div>
@@ -297,7 +363,7 @@
       <div class="row g-4">
         <div class="col-md-3">
           <div class="stats-item">
-            <div class="stats-number">+67%</div>
+            <div class="stats-number">+80%</div>
             <div class="stats-label">Usuarios buscan profesionales en Internet</div>
           </div>
         </div>
@@ -319,6 +385,8 @@
             <div class="stats-label">Satisfacción de nuestros clientes</div>
           </div>
         </div>
+      </div>
+    </div>
   </section>
 
   <!-- Servicios -->
@@ -331,16 +399,16 @@
         <div class="col-md-4">
           <div class="service-card">
             <div class="feature-icon">
-              <i class="fas fa-bullseye"></i>
+              <i class="fas fa-bullseye" aria-hidden="true"></i>
             </div>
             <h3>Marketing Digital Especializado</h3>
             <div class="strategy-badge">Estrategia 360°</div>
             <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success me-2"></i> Campañas Meta/Google Ads segmentadas</li>
-              <li><i class="fas fa-check text-success me-2"></i> Automatización de WhatsApp Business</li>
-              <li><i class="fas fa-check text-success me-2"></i> Atracción de pacientes calificados</li>
-              <li><i class="fas fa-check text-success me-2"></i> CRM médico especializado</li>
-              <li><i class="fas fa-check text-success me-2"></i> Agendamiento inteligente 24/7</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Campañas Meta/Google Ads segmentadas</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Automatización de WhatsApp Business</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Atracción de pacientes calificados</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> CRM médico especializado</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Agendamiento inteligente 24/7</li>
             </ul>
           </div>
         </div>
@@ -348,16 +416,16 @@
         <div class="col-md-4">
           <div class="service-card">
             <div class="feature-icon">
-              <i class="fas fa-user-tie"></i>
+              <i class="fas fa-user-tie" aria-hidden="true"></i>
             </div>
             <h3>Experiencia del Paciente</h3>
             <div class="strategy-badge">Inbound Marketing</div>
             <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success me-2"></i> Diseño de journey del paciente</li>
-              <li><i class="fas fa-check text-success me-2"></i> Protocolos de atención digital</li>
-              <li><i class="fas fa-check text-success me-2"></i> Capacitación de personal</li>
-              <li><i class="fas fa-check text-success me-2"></i> Sistemas de seguimiento post-consulta</li>
-              <li><i class="fas fa-check text-success me-2"></i> Encuestas de satisfacción</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Diseño de journey del paciente</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Protocolos de atención digital</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Capacitación de personal</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Sistemas de seguimiento post-consulta</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Encuestas de satisfacción</li>
             </ul>
           </div>
         </div>
@@ -365,16 +433,16 @@
         <div class="col-md-4">
           <div class="service-card">
             <div class="feature-icon">
-              <i class="fas fa-film"></i>
+              <i class="fas fa-film" aria-hidden="true"></i>
             </div>
             <h3>Contenido de Valor Médico</h3>
             <div class="strategy-badge">Posicionamiento SEO</div>
             <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success me-2"></i> Reels educativos estratégicos</li>
-              <li><i class="fas fa-check text-success me-2"></i> Blog médico especializado</li>
-              <li><i class="fas fa-check text-success me-2"></i> Posicionamiento como autoridad</li>
-              <li><i class="fas fa-check text-success me-2"></i> Contenido para funnel de conversión</li>
-              <li><i class="fas fa-check text-success me-2"></i> Estrategias de engagement</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Reels educativos estratégicos</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Blog médico especializado</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Posicionamiento como autoridad</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Contenido para funnel de conversión</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Estrategias de engagement</li>
             </ul>
           </div>
         </div>
@@ -382,15 +450,15 @@
         <div class="col-md-4">
           <div class="service-card">
             <div class="feature-icon">
-              <i class="fas fa-laptop-code"></i>
+              <i class="fas fa-laptop-code" aria-hidden="true"></i>
             </div>
             <h3>Desarrollo Web Médico</h3>
             <div class="strategy-badge">Conversión Optimizada</div>
             <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success me-2"></i> Websites médicos conversivos</li>
-              <li><i class="fas fa-check text-success me-2"></i> Automatizaciones de página</li>
-              <li><i class="fas fa-check text-success me-2"></i> Landing pages especializadas</li>
-              <li><i class="fas fa-check text-success me-2"></i> Contenido de Valor</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Websites médicos conversivos</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Automatizaciones de página</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Landing pages especializadas</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Contenido de Valor</li>
             </ul>
           </div>
         </div>
@@ -398,16 +466,16 @@
         <div class="col-md-4">
           <div class="service-card">
             <div class="feature-icon">
-              <i class="fas fa-robot"></i>
+              <i class="fas fa-robot" aria-hidden="true"></i>
             </div>
             <h3>Asistente Digital Médico</h3>
             <div class="strategy-badge">Atención 7/365</div>
             <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success me-2"></i> Agentes para atención inicial</li>
-              <li><i class="fas fa-check text-success me-2"></i> Respuestas predeterminadas</li>
-              <li><i class="fas fa-check text-success me-2"></i> Comunicación homologada</li>
-              <li><i class="fas fa-check text-success me-2"></i> Asistencia en agendamiento</li>
-              <li><i class="fas fa-check text-success me-2"></i> Recordatorio de citas</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Agentes para atención inicial</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Respuestas predeterminadas</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Comunicación homologada</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Asistencia en agendamiento</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Recordatorio de citas</li>
             </ul>
           </div>
         </div>
@@ -415,16 +483,16 @@
         <div class="col-md-4">
           <div class="service-card">
             <div class="feature-icon">
-              <i class="fas fa-chart-line"></i>
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
             </div>
             <h3>Análisis y Optimización</h3>
             <div class="strategy-badge">Resultados Medibles</div>
             <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success me-2"></i> Reportes detallados</li>
-              <li><i class="fas fa-check text-success me-2"></i> Análisis de campañas</li>
-              <li><i class="fas fa-check text-success me-2"></i> Optimización continua</li>
-              <li><i class="fas fa-check text-success me-2"></i> Pruebas A/B especializadas</li>
-              <li><i class="fas fa-check text-success me-2"></i> Adaptación a cambios del mercado</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Reportes detallados</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Análisis de campañas</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Optimización continua</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Pruebas A/B especializadas</li>
+              <li><i class="fas fa-check text-success me-2" aria-hidden="true"></i> Adaptación a cambios del mercado</li>
             </ul>
           </div>
         </div>
@@ -444,30 +512,30 @@
           <div class="mt-4">
             <div class="d-flex mb-3">
               <div class="me-3 text-primary">
-                <i class="fas fa-check-circle fa-2x"></i>
+                <i class="fas fa-check-circle fa-2x" aria-hidden="true"></i>
               </div>
               <div>
-                <h5>Enfoque 360° para el Sector Salud</h5>
+                <h3 class="h5">Enfoque 360° para el Sector Salud</h3>
                 <p class="mb-0">Estrategias diseñadas específicamente para las necesidades y regulaciones del ámbito médico.</p>
               </div>
             </div>
             
             <div class="d-flex mb-3">
               <div class="me-3 text-primary">
-                <i class="fas fa-check-circle fa-2x"></i>
+                <i class="fas fa-check-circle fa-2x" aria-hidden="true"></i>
               </div>
               <div>
-                <h5>Inbound Marketing Médico</h5>
+                <h3 class="h5">Inbound Marketing Médico</h3>
                 <p class="mb-0">Atracción de pacientes calificados mediante contenido de valor y experiencia optimizada.</p>
               </div>
             </div>
             
             <div class="d-flex">
               <div class="me-3 text-primary">
-                <i class="fas fa-check-circle fa-2x"></i>
+                <i class="fas fa-check-circle fa-2x" aria-hidden="true"></i>
               </div>
               <div>
-                <h5>Paquetes escalables</h5>
+                <h3 class="h5">Paquetes escalables</h3>
                 <p class="mb-0">Desde $3,500 MXN para comenzar a mejorar la presencia digital de tu clínica.</p>
               </div>
             </div>
@@ -475,7 +543,13 @@
         </div>
         
         <div class="col-lg-6">
-          <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/hero_images/banner-vidici.jpg" alt="Estrategia de marketing médico 360°" class="img-fluid rounded-3 shadow" loading="lazy" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
+          <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/hero_images/banner-vidici.jpg" 
+               alt="Estrategia de marketing médico 360°" 
+               class="img-fluid rounded-3 shadow" 
+               loading="lazy" 
+               style="max-height: 500px; width: auto; display: block; margin: 0 auto;"
+               width="600"
+               height="500">
         </div>
       </div>
     </div>
@@ -491,15 +565,15 @@
       <h3 class="text-center mb-4">Contenido de Valor - Video Reels</h3>
       <div id="videoCarousel" class="carousel slide portfolio-carousel" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"></button>
-          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
           <!-- Dental Calident Reel 1 -->
           <div class="carousel-item active">
-            <iframe src="https://www.facebook.com/plugins/video.php?height=1080&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1894414714317580&show_text=false&width=1920" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.facebook.com/plugins/video.php?height=1080&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1894414714317580&show_text=false&width=1920" allowfullscreen loading="lazy" title="Video de caso de éxito Dental Calident - Campaña Educativa"></iframe>
             <div class="carousel-caption">
               <h5>Dental Calident - Campaña Educativa</h5>
               <p>Contenido de valor para posicionamiento de marca y atracción de pacientes</p>
@@ -508,7 +582,7 @@
           
           <!-- Dental Calident Reel 2 -->
           <div class="carousel-item">
-            <iframe src="https://www.facebook.com/plugins/video.php?height=1080&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F7854681854594468&show_text=false&width=1920" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.facebook.com/plugins/video.php?height=1080&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F7854681854594468&show_text=false&width=1920" allowfullscreen loading="lazy" title="Video de caso de éxito Dental Calident - Reels Promocionales"></iframe>
             <div class="carousel-caption">
               <h5>Dental Calident - Reels Promocionales</h5>
               <p>Con animaciones y contenido visualmente atractivos</p>
@@ -517,7 +591,7 @@
           
           <!-- Dental Brigar Reel 1 -->
           <div class="carousel-item">
-            <iframe src="https://www.tiktok.com/embed/v2/7483672816882093367" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.tiktok.com/embed/v2/7483672816882093367" allowfullscreen loading="lazy" title="Video de caso de éxito Dental Brigar - Behind the Scenes"></iframe>
             <div class="carousel-caption">
               <h5>Dental Brigar - Behind the Scenes</h5>
               <p>Humanización de la marca y muestra del ambiente clínico</p>
@@ -526,18 +600,18 @@
           
           <!-- Dental Brigar Reel 2 -->
           <div class="carousel-item">
-            <iframe src="https://www.tiktok.com/embed/v2/7477253592131341574" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.tiktok.com/embed/v2/7477253592131341574" allowfullscreen loading="lazy" title="Video de caso de éxito Dental Brigar - Explicación de Tratamiento"></iframe>
             <div class="carousel-caption">
               <h5>Dental Brigar - Explicación de Tratamiento</h5>
               <p>Educación al paciente sobre procedimientos odontológicos</p>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev" aria-label="Anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next" aria-label="Siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
       </div>
       
@@ -545,16 +619,21 @@
       <h3 class="text-center mb-4 mt-5">Casos de Éxito - Formatearía Institucional</h3>
       <div id="portfolioCarousel" class="carousel slide portfolio-img-carousel" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"></button>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3"></button>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
         <div class="carousel-inner">
           <!-- Tarjetas de Presentación -->
           <div class="carousel-item active">
-            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-1.jpg" class="d-block w-100" alt="Tarjetas de Presentación y recetarios médicos">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-1.jpg" 
+                 class="d-block w-100" 
+                 alt="Tarjetas de Presentación y recetarios médicos"
+                 loading="lazy"
+                 width="1200"
+                 height="500">
             <div class="carousel-caption">
               <h5>Identidad Corporativa</h5>
               <p>Diseño profesional para primera impresión con Branding consistente en cada interacción con pacientes. Tarjetas de presentación y recetarios que refuerzan tu imagen profesional.</p>
@@ -563,7 +642,12 @@
           
           <!-- Documentación Médica -->
           <div class="carousel-item">
-            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-2.jpg" class="d-block w-100" alt="Documentación médica profesional">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-2.jpg" 
+                 class="d-block w-100" 
+                 alt="Documentación médica profesional"
+                 loading="lazy"
+                 width="1200"
+                 height="500">
             <div class="carousel-caption">
               <h5>Documentación Médica Profesional</h5>
               <p>Historia clínica, hoja de consentimiento informado y documentos legales que cumplen con normativas y proyectan profesionalismo y organización en tu consultorio.</p>
@@ -572,7 +656,12 @@
           
           <!-- Protocolos de atención -->
           <div class="carousel-item">
-            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-4.jpg" class="d-block w-100" alt="Protocolos de atención estandarizados">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-4.jpg" 
+                 class="d-block w-100" 
+                 alt="Protocolos de atención estandarizados"
+                 loading="lazy"
+                 width="1200"
+                 height="500">
             <div class="carousel-caption">
               <h5>Protocolos de Atención</h5>
               <p>Homologación de la comunicación en clínica, estableciendo protocolos y procedimientos claros que mejoran la experiencia de los pacientes y por ende la recomendación.</p>
@@ -581,7 +670,12 @@
           
           <!-- Material impreso -->
           <div class="carousel-item">
-            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-3.jpg" class="d-block w-100" alt="Material impreso profesional">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-3.jpg" 
+                 class="d-block w-100" 
+                 alt="Material impreso profesional"
+                 loading="lazy"
+                 width="1200"
+                 height="500">
             <div class="carousel-caption">
               <h5>Formatos Impresos Profesionales</h5>
               <p>Volantes, carpetas, recetarios, tarjetas de presentación y papelería institucional con diseño formal y atractivo, integrando herramientas digitales como códigos QR para localización de clínica.</p>
@@ -590,18 +684,23 @@
           
           <!-- Posicionamiento -->
           <div class="carousel-item">
-            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-5.jpg" class="d-block w-100" alt="Posicionamiento de negocio">
+            <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/portafolio/portafolio-5.jpg" 
+                 class="d-block w-100" 
+                 alt="Posicionamiento de negocio"
+                 loading="lazy"
+                 width="1200"
+                 height="500">
             <div class="carousel-caption">
               <h5>Posicionamiento de Negocio</h5>
               <p>Estrategias para generar recomendaciones de pacientes, mejorar la visibilidad de tu clínica y gestionar reseñas positivas que construyen tu reputación online.</p>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev" aria-label="Anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next" aria-label="Siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -609,228 +708,3 @@
 
   <!-- CTA -->
   <section class="py-5 bg-primary text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">¿Listo para transformar tu consultorio con una estrategia 360°?</h2>
-      <p class="lead mb-4">Obtén un diagnóstico gratuito de tu presencia digital y descubre cómo podemos ayudarte a atraer más pacientes</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5B6KW85AzWcSAFIvyo0tQql7LDb4pX5FCiPoJBIwzWRFjpw/viewform" class="btn btn-light btn-lg px-5" target="_blank">Solicitar Diagnóstico Gratis</a>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <h2 class="section-title text-start">Contacto</h2>
-          <p class="lead">Estamos aquí para ayudarte a crecer</p>
-          
-          <div class="mb-4">
-            <h5><i class="fas fa-map-marker-alt text-primary me-2"></i> Dirección</h5>
-            <p>Los Barandales 1810, Fracc. El Campanario, Ensenada, Baja California, México</p>
-          </div>
-          
-          <div class="mb-4">
-            <h5><i class="fas fa-phone-alt text-primary me-2"></i> Teléfono</h5>
-            <p><a href="tel:6465245378" class="text-decoration-none">646 524 5378</a></p>
-          </div>
-          
-          <div class="mb-4">
-            <h5><i class="fas fa-envelope text-primary me-2"></i> Correo</h5>
-            <p><a href="mailto:vidicipublicidad@gmail.com" class="text-decoration-none">vidicipublicidad@gmail.com</a></p>
-          </div>
-          
-          <div class="mb-4">
-            <h5><i class="fas fa-clock text-primary me-2"></i> Horario</h5>
-            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-          </div>
-          
-          <div>
-            <h5 class="mb-3">Síguenos</h5>
-            <a href="https://www.linkedin.com/company/medicaleads-by-vidici" class="social-icon social-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/vidicimarketing/" class="social-icon social-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/vidicimarketing/" class="social-icon social-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@vidicimarketing" class="social-icon social-tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/526465245378" class="social-icon social-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-        
-        <div class="col-lg-6">
-          <div class="card shadow-sm border-0">
-            <div class="card-body p-4 text-center">
-              <h3 class="mb-4">¿Necesitas una estrategia digital para tu consultorio?</h3>
-              <p class="mb-4">Agenda una asesoría gratuita con nuestros especialistas en marketing médico.</p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5B6KW85AzWcSAFIvyo0tQql7LDb4pX5FCiPoJBIwzWRFjpw/viewform" class="btn btn-primary btn-lg" target="_blank">Agendar Asesoría</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-        <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <img src="https://ik.imagekit.io/owhbbjwd5/MEDICALEADS_Website_Assets/logos/logo-medicaleads-sitio-web-bco.png" alt="Medicaleads by VIDICI - Marketing Digital para el sector salud" height="50" class="mb-3" loading="lazy">
-          <p>Especialistas en estrategias digitales 360° para el sector salud. Transformamos consultorios y clínicas mediante inbound marketing y experiencia del paciente.</p>
-        </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <h5>Servicios</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Estrategia 360°</a></li>
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Experiencia del Paciente</a></li>
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Contenido de valor Médico</a></li>
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Desarrollo Web</a></li>
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Asistente Digital</a></li>
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Análisis y Optimización</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <h5>Enlaces</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#inicio" class="text-white-50">Inicio</a></li>
-            <li class="mb-2"><a href="#servicios" class="text-white-50">Servicios</a></li>
-            <li class="mb-2"><a href="#nosotros" class="text-white-50">Metodología</a></li>
-            <li class="mb-2"><a href="#contacto" class="text-white-50">Contacto</a></li>
-          </ul>
-        </div>
-          </form>
-          </div>
-        <div class="newsletter-section mt-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div id="mlb2-25414142" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-25414142">
-          <div class="ml-form-align-center">
-            <div class="ml-form-embedWrapper embedForm">
-              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <div class="ml-form-embedContent">
-                  <h4 class="text-center mb-3">Recibe Tips de Marketing Médico</h4>
-                  <p class="text-center">Suscríbete a nuestro newsletter con consejos para atraer más pacientes.</p>
-                </div>
-
-                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1488328/forms/153092779074913887/subscribe" method="post" target="_blank">
-                  <div class="ml-form-formContent">
-                    <div class="ml-form-fieldRow ml-last-item">
-                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                        <div class="input-group">
-                          <input aria-label="email" type="email" class="form-control" name="fields[email]" placeholder="Tu correo electrónico" autocomplete="email" required>
-                          <div class="input-group-append">
-                            <button type="submit" class="btn btn-primary">Suscribir</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <input type="hidden" name="ml-submit" value="1">
-                  <input type="hidden" name="anticsrf" value="true">
-                </form>
-              </div>
-
-              <div class="ml-form-successBody row-success" style="display: none">
-                <div class="ml-form-successContent">
-                  <h4>¡Gracias!</h4>
-                  <p>Te has suscrito correctamente a nuestra lista.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MailerLite Scripts -->
-<style type="text/css">
-  .ml-form-embedSubmitLoad {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-  }
-  .ml-form-embedSubmitLoad:after {
-    content: " ";
-    display: block;
-    width: 11px;
-    height: 11px;
-    margin: 1px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    border-color: #fff #fff #fff transparent;
-    animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-  }
-  @keyframes ml-form-embedSubmitLoad {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  #mlb2-25414142.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-    background-color: #2563eb !important;
-    border: none !important;
-    border-radius: 4px !important;
-    color: #fff !important;
-    font-weight: 700 !important;
-  }
-  #mlb2-25414142.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-    background-color: #1e40af !important;
-  }
-</style>
-
-<script>
-  function ml_webform_success_25414142() {
-    var $ = ml_jQuery || jQuery;
-    $('.ml-subscribe-form-25414142 .row-success').show();
-    $('.ml-subscribe-form-25414142 .row-form').hide();
-  }
-</script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-<script>fetch("https://assets.mailerlite.com/jsonp/1488328/forms/153092779074913887/takel")</script>
-        </div>
-        </div>
-      </div>
-      <hr class="mt-4 mb-4">
-      <div class="row">
-        <div class="col-md-6 text-center text-md-start">
-          <p class="mb-0">© 2023 Medicaleads by VIDICI. Todos los derechos reservados.</p>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <p class="mb-0">
-            <a href="#" class="text-white-50 me-3">Términos de Servicio</a>
-            <a href="#" class="text-white-50">Política de Privacidad</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Activar tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-    
-    // Smooth scrolling para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-    
-    // Inicializar carruseles
-    var videoCarousel = new bootstrap.Carousel(document.getElementById('videoCarousel'), {
-      interval: 5000,
-      ride: 'carousel'
-    });
-    
-    var portfolioCarousel = new bootstrap.Carousel(document.getElementById('portfolioCarousel'), {
-      interval: 5000,
-      ride: 'carousel'
-    });
-  </script>
-</body>
-</html>
